@@ -84,14 +84,3 @@ VOCAL_BRIDGE_AGENT_ID_L2=your-agent-id-here
 3. Click **Connect** in the rendered widget, allow microphone access.
 4. Say **"let's play tic-tac-toe"** to start a game.
 5. Speak a move ("center", "top right") or click a cell directly.
-
-## Troubleshooting quick reference
-
-| Symptom | Likely cause |
-|---|---|
-| `Agent creation via API requires a paid plan` | `VOCAL_BRIDGE_AGENT_ID_L2` isn't set/loaded — the notebook fell into the `agent create` branch. Set it in `.env` and restart the kernel. |
-| Agent says it "can't show the board" | `actions.json` wasn't pushed to the agent yet. Run `vb config set --client-actions-file actions.json`. |
-| `Connection failed` in the widget, no console detail | Likely running inside VS Code's notebook viewer — try a real browser tab via `jupyter notebook`. |
-| `403 Forbidden` on `/api/v1/token` | Check the response body — it's often a **usage limit**, not a bad key (e.g. free tier minutes/year exceeded), not something fixable from code. |
-| `.env` changes don't seem to take effect | Restart the kernel. `load_dotenv()` only re-reads the file when explicitly called, and env vars are cached in the running kernel process. |
-
