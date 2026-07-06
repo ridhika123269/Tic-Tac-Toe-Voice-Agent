@@ -95,10 +95,3 @@ VOCAL_BRIDGE_AGENT_ID_L2=your-agent-id-here
 | `403 Forbidden` on `/api/v1/token` | Check the response body — it's often a **usage limit**, not a bad key (e.g. free tier minutes/year exceeded), not something fixable from code. |
 | `.env` changes don't seem to take effect | Restart the kernel. `load_dotenv()` only re-reads the file when explicitly called, and env vars are cached in the running kernel process. |
 
-## Notes
-
-- Never paste your full API key into chat, docs, or anywhere public —
-  treat it like a password. Rotate it from the dashboard if it's ever
-  been exposed.
-- The agent ID does **not** change when you rotate your API key — only
-  the key does.
